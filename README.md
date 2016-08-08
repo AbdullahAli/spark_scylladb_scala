@@ -9,6 +9,10 @@ sbt assembly
 docker pull scylladb/scylla
 docker run -p 127.0.0.1:9042:9042 -i -t scylladb/scylla
 cqlsh
+CREATE KEYSPACE spark_example WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+USE spark_example;
+CREATE TABLE json_test (uuid TEXT PRIMARY KEY, json TEXT);
+DESCRIBE TABLES;
 ```
 
 # SPARK
